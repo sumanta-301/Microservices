@@ -1,0 +1,18 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: USER-SERVICE
+          uri: lb://USER-SERVICE
+          predicates:
+            - Path=/users/**
+
+        - id: ITEMSERVICE
+          uri: lb://ITEMSERVICE
+          predicates:
+            - Path=/items/**
+
+        - id: RETAILERSERVICE
+          uri: lb://RETAILERSERVICE
+          predicates:
+            - Path=/retailers/**

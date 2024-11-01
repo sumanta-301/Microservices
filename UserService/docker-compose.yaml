@@ -1,0 +1,13 @@
+zipkin:
+  image: openzipkin/zipkin
+  container_name: zipkin
+  ports:
+    - 9411:9411
+    - networks:
+        - mysql
+rabbitmq:
+  image: rabbitmq:3-management
+  container_name: rabbit-MQ
+  ports:
+    - 5672:5672
+    - 15672:15672
